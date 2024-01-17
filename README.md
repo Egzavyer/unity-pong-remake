@@ -16,7 +16,7 @@ Welcome to the Unity Pong Remake repository! This project is a classic recreatio
 
 1. **Clone the Repository:**
    ```
-   git clone https://github.com/your-username/unity-pong-remake.git
+   git clone https://github.com/egzavyer/unity-pong-remake.git
    ```
 
 2. **Open in Unity:**
