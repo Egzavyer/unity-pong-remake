@@ -166,10 +166,12 @@ public class BallMovement : MonoBehaviour
     {
         paddleHit.Play();
     }
-
     public void PlayPointSound()
     {
         pointSound.Play();
     }
+
+
+    //=======================================================================================================
 
 }
