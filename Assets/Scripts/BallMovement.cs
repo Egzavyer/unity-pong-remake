@@ -23,6 +23,10 @@ public class BallMovement : MonoBehaviour
     //Counter for the amound of times the ball collides with a paddle
     public float hitCounter = 0f;
 
+    //
+    public AudioSource paddleHit;
+    public AudioSource pointSound;
+
     void Start()
     {
         //Get a random starting value for the Y direction (angle)
@@ -89,6 +93,8 @@ public class BallMovement : MonoBehaviour
             if (updateScore)
             {
                 updateScore = false;
+                //Plays sound effect for getting a point
+                PlayPointSound();
                 //Disable the ball
                 GetComponent<SpriteRenderer>().enabled = false;
                 //Give Player1 a point
@@ -106,6 +112,8 @@ public class BallMovement : MonoBehaviour
             if (updateScore)
             {
                 updateScore = false;
+                //Plays sound effect for getting a point
+                PlayPointSound();
                 //Disable the ball
                 GetComponent<SpriteRenderer>().enabled = false;
                 //Give Player2 a point
@@ -138,6 +146,8 @@ public class BallMovement : MonoBehaviour
             direction = new Vector2(movementSpeed, randnum);
             //Increment Counter
             hitCounter += 1f;
+            //Play the sound of hitting a paddle
+            PlayPaddleHitSound();
         }
         //If ball hits a wall
         if (collision.gameObject.CompareTag("Wall"))
@@ -149,5 +159,17 @@ public class BallMovement : MonoBehaviour
 
 
     //=======================================================================================================
+    //Handles playing sounds on certain actions
+
+
+    public void PlayPaddleHitSound()
+    {
+        paddleHit.Play();
+    }
+
+    public void PlayPointSound()
+    {
+        pointSound.Play();
+    }
 
 }
